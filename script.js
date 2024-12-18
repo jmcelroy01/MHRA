@@ -6,6 +6,7 @@ document.getElementById("convertButton").addEventListener("click", function () {
     const mlaPattern = /^([^,]+), ([^\.]+)(?:, et al\.)?\. "([^"]+)" ([^0-9]+)(?: (\d+\.\d+))? \((\d{4})\): (\d+(?:-\d+)?)\.$/gm;
 
     return mlaText.replace(mlaPattern, (_, lastName, firstName, title, journal, volumeIssue, year, pages) => {
+      // Build the author string, correctly handling `et al.` if present
       const author = `${firstName} ${lastName}${mlaText.includes(", et al.") ? ", et al." : ""}`;
       return `${author}, "${title}" (${journal.trim()}${volumeIssue ? `, ${volumeIssue}` : ""}, ${year}, ${pages})`;
     });

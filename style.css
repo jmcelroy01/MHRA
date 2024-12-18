@@ -1,3 +1,8 @@
-body{
-    background-color: #ffd1df;
-    }
+body {
+     background-color: #ffd1df;
+}
+
+inc_font {
+    font-style: normal;
+    font-size: 150%;
+}

@@ -5,12 +5,12 @@ document.getElementById("convertButton").addEventListener("click", function () {
   function mlaToMhra(mlaText) {
     const mlaPattern = /^([^,]+), ([^\.]+)(?:, et al\.)?\. "([^"]+)" ([^0-9]+)(?: (\d+\.\d+))? \((\d{4})\): (\d+(?:-\d+)?)\.$/gm;
 
-    return mlaText.replace(mlaPattern, (_, lastName, firstName, title, publisher, issue, year, pages) => {
+    return mlaText.replace(mlaPattern, (_, lastName, firstName, title, journal, volumeIssue, year, pages) => {
       const author = `${firstName} ${lastName}${mlaText.includes(", et al.") ? ", et al." : ""}`;
-      return `${author}, "${title}" (${publisher}: ${year}), pp. ${page}.`;
+      return `${author}, "${title}" (${journal.trim()}${volumeIssue ? `, ${volumeIssue}` : ""}, ${year}, ${pages})`;
     });
   }
-  
+
   // Process the input and display output
   const convertedText = mlaToMhra(inputText);
   document.getElementById("outputText").textContent = convertedText || "No valid MLA references detected.";

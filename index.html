@@ -21,7 +21,7 @@
       background: #f9f9f9;
       background-image: url('https://images.pexels.com/photos/531756/pexels-photo-531756.jpeg'); /* Replace with your image file */
       background-size: 200%; /* Make the image cover the box */
-      background-position: center; /* Center the image */
+      background-position: center; 
       background-repeat: no-repeat; /* Prevent tiling */
       background-blend-mode: overlay;
       background-color: rgba(255, 255, 255, 0.6);
@@ -38,8 +38,19 @@
       position: fixed; /* Fixed positioning for the new box */
       bottom: 10px; /* Place it at the bottom */
       right: 10px; /* Place it at the right */
-      width: 300px; /* Adjust the width as needed */
-      height: 100px; /* Adjust the height as needed */
+      width: 300px; 
+      height: 100px; 
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+    }
+    #bottomLeftBox {
+      position: fixed; /* Fixed positioning for the new box */
+      bottom: 10px; /* Place it at the bottom */
+      left: 10px; /* Place it at the left */
+      width: 300px; 
+      height: 100px; 
       padding: 10px;
       border: 1px solid #ccc;
       background: #f9f9f9;
@@ -62,6 +73,10 @@
   <div id="instructions">
     <strong>Instructions:</strong>
     <p>This page converts...</p>
+  </div>
+  <div id="bottomLeftBox">
+    <strong>Additional:</strong>
+    <p>This is ~~</p>
   </div>
   <div id="bottomRightBox">
     <strong>Additional Notes:</strong>

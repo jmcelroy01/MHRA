@@ -3,11 +3,11 @@ document.getElementById("convertButton").addEventListener("click", function () {
 
   // Function to convert MLA to MHRA
   function mlaToMhra(mlaText) {
-    const mlaPattern = /^([^,]+), ([^\.]+)(?:, et al\.)?\. "([^"]+)" ([^0-9]+)(?: (\d+\.\d+))? \((\d{4})\): (\d+(?:-\d+)?)\.$/gm;
+    const mlaPattern = /^([^,]+), ([^\.]+)(, et al\.)?\. "([^"]+)" ([^0-9]+)(?: (\d+\.\d+))? \((\d{4})\): (\d+(?:-\d+)?)\.$/gm;
 
-    return mlaText.replace(mlaPattern, (_, lastName, firstName, title, journal, volumeIssue, year, pages) => {
-      // Build the author string, correctly handling `et al.` if present
-      const author = `${firstName} ${lastName}${mlaText.includes(", et al.") ? ", et al." : ""}`;
+    return mlaText.replace(mlaPattern, (_, lastName, firstName, etAl, title, journal, volumeIssue, year, pages) => {
+      // Build the author string using the optional `et al.` group
+      const author = `${firstName} ${lastName}${etAl || ""}`;
       return `${author}, "${title}" (${journal.trim()}${volumeIssue ? `, ${volumeIssue}` : ""}, ${year}, ${pages})`;
     });
   }

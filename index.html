@@ -61,11 +61,12 @@
 </head>
 <body>
   <h1>MLA to MHRA Converter</h1>
-  <form id="converterForm">
-    <label for="inputText"> <p style="font-size:30px">&#127800;</p> Enter MLA-formatted text:</label>
-    <textarea id="inputText" placeholder="Enter MLA references here"></textarea><br><br>
-    <button type="button" id="convertButton">Convert to MHRA</button>
+  <form id="converterForm" style="display: flex; align-items: center; gap: 10px;">
+  <p style="font-size: 30px; margin: 0;">&#127800;</p>
+  <label for="inputText" style="margin: 0;">Enter MLA-formatted text:</label>
   </form>
+  <textarea id="inputText" placeholder="Enter MLA references here"></textarea><br><br>
+  <button type="button" id="convertButton">Convert to MHRA</button>
   <div id="output">
     <strong>Converted Text:</strong>
     <p id="outputText"></p>

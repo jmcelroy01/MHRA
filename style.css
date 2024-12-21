@@ -34,3 +34,11 @@ inc_font {
 #copyButton:hover {
   background-color: #45a049;
 }
+
+#bottomLeftBox .right-align {
+  text-align: right;
+}
+
+#bottomRightBox .right-align {
+  text-align: right;
+}

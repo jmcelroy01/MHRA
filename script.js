@@ -4,8 +4,8 @@ document.getElementById("convertButton").addEventListener("click", function () {
   // Function to convert MLA to MHRA
   function mlaToMhra(mlaText) {
     const mlaPattern = /^([^,]+), ([^\.]+)\. "([^"]+)" ([^0-9]+)(?:\. ([^0-9]+))?(?: (\d+\.\d+))? ?\(?(\d{4})\)?(?:\:|\.) (\d+(?:-\d+)?)\.$/gm;
-    return mlaText.replace(mlaPattern, (_, lastName, firstName, title, publisher, issue, year, page) => {
-      return `${firstName} ${lastName}, ${title} (${publisher}: ${year}), pp. ${page}.`;
+    return mlaText.replace(mlaPattern, (_, lastName, firstName, title, journal, publisher, issue, year, page) => {
+      return `${firstName} ${lastName}, ${title} (${journal}, ${publisher}: ${year}), pp. ${page}.`;
     });
   }
 

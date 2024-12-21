@@ -5,7 +5,7 @@ document.getElementById("convertButton").addEventListener("click", function () {
   function mlaToMhra(mlaText) {
     const mlaPattern = /^([^,]+), ([^\.]+)\. "([^"]+)" ([^0-9]+)(?: (\d+\.\d+))? ?\(?(\d{4})\)?(?:\:|\.) (\d+(?:-\d+)?)\.$/gm;
     return mlaText.replace(mlaPattern, (_, lastName, firstName, title, publisher, issue, year, page) => {
-      return `${firstName} ${lastName}, ${title} (${publisher}: ${year}), pp. ${page}.`;
+      return `${firstName} ${lastName}, ${title} (${publisher} ${issue}: ${year}), pp. ${page}.`;
     });
   }
 

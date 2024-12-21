@@ -13,8 +13,10 @@ inc_font {
 }
 
 #centeredImage img {
-  max-width: 30%; /* Make sure the image scales well */
+  max-width: 20%; /* Make sure the image scales well */
   height: auto; /* Maintain aspect ratio */
   border: 1px solid #ccc; /* Optional border */
+  display: block; /* Ensure proper alignment */
+  margin: 0 auto; /* Center the image horizontally */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }

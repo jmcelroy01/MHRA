@@ -13,3 +13,29 @@ document.getElementById("convertButton").addEventListener("click", function () {
   const convertedText = mlaToMhra(inputText);
   document.getElementById("outputText").textContent = convertedText || "No valid MLA references detected.";
 });
+
+// Copy button functionality
+document.getElementById("copyButton").addEventListener("click", function () {
+  // Select the text in the output area
+  const outputText = document.getElementById("outputText");
+  
+  // Create a temporary text area to copy the text
+  const tempTextArea = document.createElement("textarea");
+  tempTextArea.value = outputText.textContent;
+  
+  // Append the text area to the body (it must be in the DOM to be selectable)
+  document.body.appendChild(tempTextArea);
+  
+  // Select the text inside the temporary text area
+  tempTextArea.select();
+  tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+  
+  // Copy the text to clipboard
+  document.execCommand("copy");
+  
+  // Remove the temporary text area from the DOM
+  document.body.removeChild(tempTextArea);
+  
+  // Alert the user that the text has been copied
+  alert("Text copied to clipboard!");
+});

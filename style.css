@@ -20,3 +20,17 @@ inc_font {
   margin: 0 auto; /* Center the image horizontally */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }
+
+#copyButton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+#copyButton:hover {
+  background-color: #45a049;
+}
